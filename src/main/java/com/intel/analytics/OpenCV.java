@@ -1,5 +1,9 @@
 package com.intel.analytics;
 
+import org.apache.log4j.Logger;
+import org.opencv.core.Core;
+import spire.math.Interval;
+
 import java.io.*;
 import java.net.URL;
 import java.nio.channels.FileChannel;
@@ -23,6 +27,7 @@ public class OpenCV {
             }
             tmpFile = extract(jopencvFileName);
             System.load(tmpFile.getAbsolutePath());
+            System.out.println("load " + tmpFile);
             tmpFile.delete(); // delete so temp file after loaded
             isLoaded = true;
 
